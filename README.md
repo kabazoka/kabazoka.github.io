@@ -1,2 +1,1 @@
-# kabazoka.github.io
-Personal website
+# A Github page based on jekyll
