@@ -1,10 +1,8 @@
 ---
 layout: post
+auther: kabazoka
 title: Building OpenCV with CMake and MinGW-make for C++ in VS Code
 date: '2023-12-18 17:47:25 +0800'
----
-# Building OpenCV with CMake and MinGW-make for C++ in VS Code
-
 ---
 
 > The following tutorial present the step to build and run a C++ program implementing OpenCV library in Windows 11.
@@ -32,7 +30,7 @@ date: '2023-12-18 17:47:25 +0800'
 cmake --version
 ```
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled.png)
+![Untitled](/assets/post_cmake/Untitled.png)
 
 ### Add the cmake/bin to to your environment PATH
 
@@ -53,17 +51,17 @@ exit
 
 ### Follow the steps
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%201.png)
+![Untitled](/assets/post_cmake/Untitled%201.png)
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%202.png)
+![Untitled](/assets/post_cmake/Untitled%202.png)
 
 Now MSYS2 is ready for you and a terminal for the [UCRT64 environment](https://www.msys2.org/docs/environments/) will launch
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%203.png)
+![Untitled](/assets/post_cmake/Untitled%203.png)
 
 ### Open MSYS2 MinGW64
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%204.png)
+![Untitled](/assets/post_cmake/Untitled%204.png)
 
 ### Install the mingw-w64 GCC
 
@@ -92,11 +90,11 @@ gcc --version
 
 ### Open VS Code
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%205.png)
+![Untitled](/assets/post_cmake/Untitled%205.png)
 
 ### In your project, create CMakeLists.txt
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%206.png)
+![Untitled](/assets/post_cmake/Untitled%206.png)
 
 ```bash
 cmake_minimum_required( VERSION 3.5 )
@@ -108,9 +106,9 @@ add_executable( <your_project_name> <your_project_main.cpp> )
 
 ### Open new terminal
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%207.png)
+![Untitled](/assets/post_cmake/Untitled%207.png)
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%208.png)
+![Untitled](/assets/post_cmake/Untitled%208.png)
 
 ```bash
 # type this in your terminal
@@ -123,7 +121,7 @@ cmake -G "MinGW Makefiles" ..
 
 ### If configured successfully, the output should looks like this:
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%209.png)
+![Untitled](/assets/post_cmake/Untitled%209.png)
 
 ### Use make to build the C++ files
 
@@ -134,7 +132,7 @@ mingw32-make
 
 ### If built successfully, the output should looks like this:
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%2010.png)
+![Untitled](/assets/post_cmake/Untitled%2010.png)
 
 ### Then execute your program:
 
@@ -142,6 +140,6 @@ mingw32-make
 .\<your_project>.exe
 ```
 
-![Untitled](Building%20OpenCV%20with%20CMake%20and%20MinGW-make%20for%20C++%20%20ecda13b476bd4e39b43c7d1996b1749c/Untitled%2011.png)
+![Untitled](/assets/post_cmake/Untitled%2011.png)
 
 # 3. Compile OpenCV
