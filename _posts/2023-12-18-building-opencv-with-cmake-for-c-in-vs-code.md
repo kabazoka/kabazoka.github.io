@@ -86,7 +86,7 @@ mingw32-make --version
 gcc --version
 ```
 
-# Create Project
+# 3. Create Project
 
 ### Open VS Code
 
@@ -142,4 +142,54 @@ mingw32-make
 
 ![Untitled](/assets/post_cmake/Untitled%2011.png)
 
-# 3. Compile OpenCV
+# 4. Compile OpenCV
+
+---
+
+[Releases](https://opencv.org/releases/)
+
+### Click on the Sources then unzip (Recommend to unzip in C:/)
+
+![Untitled](/assets/post_cmake/Untitled%2012.png)
+
+## Build OpenCV locally
+
+### Make directories
+
+```bash
+# in C:\opencv-4.8.0
+# make files will be stored in mingw-build
+mkdir mingw-build
+# and compiled files will be stored here
+mkdir build
+cd mingw-build
+# Create makefiles for mingw-make with cmake
+cmake -G "MinGW Makefiles" C:\opencv-4.8.0 -DCMAKE_INSTALL_PREFIX=C:\opencv-4.8.0\build -DEBUILD_TESTS=OFF -DBUILD_PREF_TESTS=OFF
+# Then compile (the parameter -j is to specify how many logic processors to run)
+# I'm using i7-9700 which has 8 logic processors, so I used -j8 to make it faster
+mingw32-make install -j8
+# then set the path as environment variables
+setx OpenCV_DIR " C:\opencv-4.8.0\build"
+setx Path "%Path%: C:\opencv-4.8.0\build\x64\mingw\bin"
+exit
+```
+
+### Configure OpenCV for your project
+
+```bash
+# in your CMakeLists.txt
+cmake_minimum_required( VERSION 3.5 )
+project( <project_name> )
+
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+
+add_executable( <project_name> <project_main.cpp> )
+target_link_libraries( <project_name> ${OpenCV_LIBS})
+```
+
+### Include OpenCV header in your code
+
+```C++
+#include <opencv\opencv.hpp>
+```
